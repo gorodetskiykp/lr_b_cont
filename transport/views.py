@@ -1,22 +1,55 @@
 from django.shortcuts import render
 
 
-def check(request):
-    template = "transport/check.html"
-    context = {}
-    return render(request, template, context)
-
-
-def containers(request):
-    template = "transport/containers.html"
+def index(request):
+    template = "transport/index.html"
     context = {
+        "title": "Контейнеры",
         "containers": [
-            {"number": 324532432, "weight": 5488},
-            {"number": 543534534, "weight": 5481},
-            {"number": 654324444, "weight": 5484},
-            {"number": 897684565, "weight": 5233},
-        ],
+            {
+                "id": 1,
+                "name": "Контейнер 1",
+                "description": "Описание контейнера 1",
+                "image": "container1.jpg",
+                "items": [],
+            },
+            {
+                "id": 2,
+                "name": "Контейнер 2",
+                "description": "Описание контейнера 2",
+                "image": "container2.jpg",
+            },
+            {
+                "id": 3,
+                "name": "Контейнер 3",
+                "description": "Описание контейнера 3",
+                "image": "container3.jpg",
+            }
+        ]
     }
     return render(request, template, context)
 
 
+def cart(request):
+    template = "transport/cart.html"
+    context = {
+        "title": "Корзина",
+    }
+    return render(request, template, context)
+
+
+def cont(request, id):
+    template = "transport/cont.html"
+    context = {
+        "title": "Контейнер",
+    }
+    return render(request, template, context)
+
+
+def add_product_to_cart(request, id):
+    template = "transport/cart.html"
+    context = {
+        "title": "Корзина",
+        "products": "Продукт 1",
+    }
+    return render(request, template, context)

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="product-detail">
+  <img src="images/product.jpg" alt="Product">
+  <h2>Продукт</h2>
+  <p>Описание продукта</p>
+  <button>Получить</button>
+</div>
+<ul class="related-products">
+  <li>
+    <div class="card">
+      <img src="images/product1.jpg" alt="Product 1">
+      <h2>Продукт 1</h2>
+      <p>Описание продукта 1</p>
+      <button><a href="{% url 'transport:to_cart' 1 %}">Получить</a></button>
+    </div>
+  </li>
+  <li>
+    <div class="card">
+      <img src="images/product2.jpg" alt="Product 2">
+      <h2>Продукт 2</h2>
+      <p>Описание продукта 2</p>
+      <button>Получить</button>
+    </div>
+  </li>
+  <li>
+    <div class="card">
+      <img src="images/product3.jpg" alt="Product 3">
+      <h2>Продукт 3</h2>
+      <p>Описание продукта 3</p>
+      <button>Получить</button>
+    </div>
+  </li>
+  <li>
+    <div class="card">
+      <img src="images/product4.jpg" alt="Product 4">
+      <h2>Продукт 4</h2>
+      <p>Описание продукта 4</p>
+      <button>Получить</button>
+    </div>
+  </li>
+  <li>
+    <div class="card">
+      <img src="images/product5.jpg" alt="Product 5">
+      <h2>Продукт 5</h2>
+      <p>Описание продукта 5</p>
+      <button>Получить</button>
+    </div>
+  </li>
+</ul>
+{% endblock %}

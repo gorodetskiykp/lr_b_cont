@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Контейнеры</h1>
+    <nav>
+      <a href="{% url 'transport:index' %}">Домой</a>
+      <a href="{% url 'transport:cart' %}">Корзина</a>
+    </nav>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

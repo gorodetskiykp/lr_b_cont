@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul>
+  {% for container in containers %}
+  <li>
+    <div class="card">
+      <img src="images/{{ container.image }}" alt="{{ container.name }}">
+      <h2>{{ container.name }}</h2>
+      <p>{{ container.description }}</p>
+      <button> 
+        <a href="{% url 'transport:cont' container.id %}">Перейти</a>
+      </button>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

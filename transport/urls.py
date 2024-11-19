@@ -1,9 +1,10 @@
-
 from django.urls import path
 from . import views
 
-app = 'transport'
+app_name = 'transport'
 urlpatterns = [
-    path('', views.containers, name='containers'),
-    path('check/', views.check, name='check'),
+    path('', views.index, name='index'),
+    path('cart', views.cart, name='cart'),
+    path('cont/<int:id>', views.cont, name='cont'),
+    path('to_cart/<int:id>', views.add_product_to_cart, name='to_cart'),
 ]
