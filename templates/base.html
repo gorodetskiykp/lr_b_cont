@@ -1,8 +1,10 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>{{ title }}</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
   <header>
@@ -11,6 +13,7 @@
       <a href="{% url 'transport:index' %}">Домой</a>
       <a href="{% url 'transport:cart' %}">Корзина</a>
     </nav>
+    <hr />
   </header>
   <main>
     {% block content %}{% endblock %}

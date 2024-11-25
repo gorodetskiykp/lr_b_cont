@@ -1,18 +1,35 @@
 {% extends "base.html" %}
 
+
 {% block content %}
-<ul>
+
+<div class="container">
+<div class="container cards">
   {% for container in containers %}
-  <li>
     <div class="card">
-      <img src="images/{{ container.image }}" alt="{{ container.name }}">
+      <img src="images/{{ container.image }}" alt="{{ container.name }}" />
       <h2>{{ container.name }}</h2>
       <p>{{ container.description }}</p>
+      <p>Стоимость: {{ container.price }}</p>
       <button> 
         <a href="{% url 'transport:cont' container.id %}">Перейти</a>
       </button>
     </div>
-  </li>
   {% endfor %}
-</ul>
+</div>
+
+<div>
+  <h1>Заказы</h1>
+  {% for order_id, order in collected_cart.items %}
+  <div>
+    <h3>Заказ {{ order_id }}</h3>
+    {% for container in order.containers %}
+      <li><a href="{% url 'transport:cont' container.id %}">{{  container.name }}</a>- {{ container.price }}</li>
+    {% endfor %}
+    <p>Итого: {{ order.total_price }}</p>
+  </div>  
+  {% endfor %}
+</div>
+</div>
+
 {% endblock %}

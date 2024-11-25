@@ -1,31 +1,16 @@
 from django.shortcuts import render
 
+from .models import CONTAINERS, ORDERS, collect_cart
+
+
+
 
 def index(request):
     template = "transport/index.html"
     context = {
         "title": "Контейнеры",
-        "containers": [
-            {
-                "id": 1,
-                "name": "Контейнер 1",
-                "description": "Описание контейнера 1",
-                "image": "container1.jpg",
-                "items": [],
-            },
-            {
-                "id": 2,
-                "name": "Контейнер 2",
-                "description": "Описание контейнера 2",
-                "image": "container2.jpg",
-            },
-            {
-                "id": 3,
-                "name": "Контейнер 3",
-                "description": "Описание контейнера 3",
-                "image": "container3.jpg",
-            }
-        ]
+        "containers": CONTAINERS,
+        "collected_cart": collect_cart(),
     }
     return render(request, template, context)
 
