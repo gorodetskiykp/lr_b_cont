@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import CONTAINERS, ORDERS, collect_cart, get_container_info, get_order_info, get_search_results
+from .models import CONTAINERS, collect_cart, get_container_info, get_order_info, get_search_results
 
 
 def index(request):
@@ -15,7 +15,6 @@ def index(request):
     context = {
         "title": title,
         "containers": containers,
-        "collected_cart": collect_cart(),
         "search_value": search if search else "",
     }
     return render(request, template, context)
@@ -25,6 +24,7 @@ def cart(request):
     template = "transport/cart.html"
     context = {
         "title": "Корзина",
+        "collected_cart": collect_cart(),
     }
     return render(request, template, context)
 

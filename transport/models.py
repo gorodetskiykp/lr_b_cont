@@ -20,6 +20,20 @@ CONTAINERS = [
         "image": "3.jpeg",
         "price": 25_000,
     },
+    {
+        "id": 4,
+        "name": "Контейнер 4",
+        "description": "Описание контейнера 4",
+        "image": "3.jpeg",
+        "price": 25_000,
+    },
+    {
+        "id": 5,
+        "name": "Контейнер 5",
+        "description": "Описание контейнера 5",
+        "image": "3.jpeg",
+        "price": 65_000,
+    },
 ]
 
 ORDERS = {
